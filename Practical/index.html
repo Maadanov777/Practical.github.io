@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+
+        <script>
+            var today = new Date();
+            var day = today.getDay();
+            var daylist = ["Sunday", "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday", "Saturday"];
+            console.log("======================")
+            console.log("Today is : " + daylist[day] + ".");
+            var hour = today.getHours();
+            var minute = today.getMinutes();
+            var second = today.getSeconds();
+            var prepand = (hour >= 12) ? " PM " : " AM ";
+            hour = (hour >= 12) ? hour - 12 : hour;
+            if (hour === 0 && prepand === ' PM ') {
+                if (minute === 0 && second === 0) {
+                    hour = 12;
+                    prepand = ' Noon';
+                } else {
+                    hour = 12;
+                    prepand = ' PM';
+                }
+
+            }
+            if (hour === 0 && prepand === ' AM ') {
+
+                if (minute === 0 && second === 0) {
+                    hour = 12;
+                    prepand = ' Midnight';
+                } else {
+                    hour = 12;
+                    prepand = ' AM';
+                }
+
+            }
+
+            console.log("Current Time : " + hour + prepand + " : " + minute + " : " + second);
+            console.log("=========================")
+        </script>
+
+    </div>
+
+    <div>
+        <script>
+            var num = 5921;
+
+            function getReversedNum(num) {
+                let result = 0;
+                while (num) {
+                    result = result * 10 + num % 10;
+                    num = Math.floor(num / 10);
+                }
+
+                return result;
+            }
+            console.log("======REVERSE==========")
+
+            console.log(getReversedNum(num));
+            console.log("=======================")
+        </script>
+    </div>
+
+    <div>
+        <script>
+            function factorial(n) {
+                return (n != 1) ? n * factorial(n - 1) : 1;
+            }
+            console.log("======FACTORIAL========")
+            console.log(factorial(5))
+            console.log("=======================")
+        </script>
+    </div>
+    <div>
+        <script>
+            function numA(num1, num2) {
+
+                if (num1 > num2) {
+                    console.log("=====BOLSHEE=========")
+                    console.log(num1);
+                    console.log("=====================")
+                } else {
+                    console.log(num2);
+                }
+
+            }
+            numA(50, 40);
+        </script>
+    </div>
+
+    <div>
+        <script>
+            let myColor = ["Red", "Green", "White", "Black"];
+            console.log("=====================")
+            console.log(myColor.join());
+            console.log(myColor.join('+'));
+            console.log("=====================")
+        </script>
+    </div>
+
+    <div>
+        <script>
+            function month_name(dt) {
+                month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                return month[dt.getMonth()];
+            }
+            console.log("======================")
+            console.log(month_name(new Date("10/05/2020")));
+            console.log(month_name(new Date("11/13/2014")));
+            console.log("======================")
+        </script>
+    </div>
+
+    <div>
+        <h1 style="text-align: center;">Задание 1</h1>
+        <div id="string1">Ядра в вёдра, выдру в тундру!</div>
+        <div id="string2">Выдрав с выдры в тундре гетры</div>
+        <div id="string3">В недрах тундры, выдры в гетрах </div>
+        <div id="string4">Вытру гетрой выдре морду </div>
+        <div id="string5">Тырят в вёдра ядра кедров!</div>
+        <div id="string6">Вытру выдрой ядра кедров</div>
+        <script>
+            console.log(string3.textContent);
+            console.log(string5.textContent);
+            console.log(string2.textContent);
+            console.log(string6.textContent);
+            console.log(string4.textContent);
+            console.log(string1.textContent);
+        </script>
+    </div>
+
+    <div style="margin-top:50px;">
+        <h1 style="text-align: center;">Задание 2</h1>
+        <div class="element">Element 1</div>
+        <div class="element">Element 2</div>
+        <div class="element">Element 3</div>
+        <div class="element">Element 4</div>
+        <div class="element">Element 5</div>
+        <div class="element">Element 6</div>
+        <script>
+            var colorArray = document.getElementsByClassName('element');
+
+            colorArray[0].style.color = 'blue';
+            colorArray[1].style.color = 'red';
+            colorArray[2].style.color = 'green';
+        </script>
+    </div>
+
+    <div style="margin-top:50px;">
+        <h1 style="text-align: center;">Задание 3</h1>
+        <ol id="todo">
+        </ol>
+        <script>
+            let list = document.querySelector("ol");
+
+            var tasks = ['Buy lemonade', 'Make toasts', 'Repair car', 'Play games', 'Pet a cat'];
+            for (let i = 0; i < 5; i++) {
+                let li = document.createElement('li');
+                li.classList.add('task');
+                li.innerHTML = tasks[i];
+                list.append(li)
+            }
+        </script>
+
+    </div>
+
+
+    <div style="margin-top: 50px;">
+        <h1 style="text-align: center;">Задание 4</h1>
+        <article>
+            <h3>What is Lorem Ipsum?</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+                book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.</p>
+            <h3>Where does it come from?</h3>
+            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a
+                line in section 1.10.32. from "The Extremes of Good and Evil" by Cicero</p>
+            <h3>Why do we use it?</h3>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content
+                here, content here', making it look like readable English.</p>
+        </article>
+
+        <script>
+            for (var ptag of document.getElementsByTagName('p')) {
+                var newhr = document.createElement('hr');
+                ptag.insertAdjacentElement('afterend', newhr);
+            }
+        </script>
+
+    </div>
+
+
+    <div style="margin-top: 50px;">
+        <div id="cart-items">
+            <div class="item">Milk 1 l.<span class="qty">x 2</span></div>
+            <div class="item">Cola 1.5 l. <span class="qty">x 1</span></div>
+            <div class="item">Bread<span class="qty">x 2</span></div>
+            <div class="item">Cheese<span class="qty">x 1</span></div>
+            <div class="item">Chocolate bar<span class="qty">x 3</span></div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>
